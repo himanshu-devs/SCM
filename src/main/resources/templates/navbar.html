@@ -1,0 +1,136 @@
+<nav th:fragment="navbar" class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0
+           border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+
+        <!-- Logo -->
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img data-th-src="@{'/images/telephone.png'}" class="h-7" alt="SCM Logo">
+
+            <span class="self-center text-xl font-semibold whitespace-nowrap
+                         text-gray-900 dark:text-white">
+                SCM
+            </span>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm
+                   text-gray-500 rounded-lg md:hidden
+                   hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700
+                   focus:outline-none" aria-controls="navbar-sticky" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+            </svg>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="hidden w-full md:flex md:w-auto md:order-1 md:flex-1
+                   md:justify-center" id="navbar-sticky">
+            <div class="flex flex-col md:flex-row md:items-center">
+
+                <!-- Navigation Links -->
+                <ul class="flex flex-col p-4 mt-4 font-medium
+                           border border-gray-200 rounded-lg
+                           bg-gray-50 dark:bg-gray-800 dark:border-gray-700
+                           gap-4
+                           md:flex-row md:items-center md:justify-center md:gap-8
+                           md:mt-0 md:p-0 md:border-0
+                           md:bg-white md:dark:bg-gray-900">
+                    <li>
+                        <a data-th-href="@{'/home'}" class="block py-2 px-3 text-gray-900 dark:text-white rounded
+                                   hover:bg-gray-100 dark:hover:bg-gray-700
+                                   md:p-0 md:hover:bg-transparent
+                                   md:dark:hover:bg-transparent">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-th-href="@{'/about'}" class="block py-2 px-3 text-gray-900 dark:text-white rounded
+                                   hover:bg-gray-100 dark:hover:bg-gray-700
+                                   md:p-0 md:hover:bg-transparent
+                                   md:dark:hover:bg-transparent">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-th-href="@{'/services'}" class="block py-2 px-3 text-gray-900 dark:text-white rounded
+                                   hover:bg-gray-100 dark:hover:bg-gray-700
+                                   md:p-0 md:hover:bg-transparent
+                                   md:dark:hover:bg-transparent">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-th-href="@{'/contact'}" class="block py-2 px-3 text-gray-900 dark:text-white rounded
+                                   hover:bg-gray-100 dark:hover:bg-gray-700
+                                   md:p-0 md:hover:bg-transparent
+                                   md:dark:hover:bg-transparent">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile-Only Buttons -->
+                <div class="flex flex-col gap-3 px-4 pb-4 md:hidden">
+
+                    <button id="theme_change_button_mobile" type="button" class="flex items-center justify-center gap-2
+                               bg-gray-200 px-3 py-2 rounded-lg text-black
+                               hover:bg-gray-300
+                               dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                        <span>Dark</span>
+                    </button>
+
+                    <a data-th-href="@{'/login'}" class="text-white bg-gray-700 hover:bg-gray-800
+                               dark:bg-blue-700 dark:hover:bg-blue-800
+                               font-medium rounded-lg text-sm px-3 py-2 text-center
+                               focus:outline-none focus:ring-4">
+                        Login
+                    </a>
+
+                    <a data-th-href="@{'/register'}" class="text-white bg-gray-700 hover:bg-gray-800
+                               dark:bg-blue-700 dark:hover:bg-blue-800
+                               font-medium rounded-lg text-sm px-3 py-2 text-center
+                               focus:outline-none focus:ring-4">
+                        Signup
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop-Only Buttons -->
+        <div class="hidden md:flex items-center gap-2 md:order-2">
+
+            <button id="theme_change_button" type="button" class="inline-flex items-center justify-center gap-2
+               h-9 px-3 text-sm font-medium rounded-lg
+               bg-gray-200 text-black hover:bg-gray-300
+               dark:bg-gray-600 dark:text-white dark:hover:bg-gray-500">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+                <span>Dark</span>
+            </button>
+
+            <a data-th-href="@{'/login'}" class="inline-flex items-center justify-center
+               h-9 px-3 text-sm font-medium rounded-lg
+               text-white bg-gray-700 hover:bg-gray-800
+               dark:bg-blue-700 dark:hover:bg-blue-800
+               focus:outline-none focus:ring-4">
+                Login
+            </a>
+
+            <a data-th-href="@{'/register'}" class="inline-flex items-center justify-center
+               h-9 px-3 text-sm font-medium rounded-lg
+               text-white bg-gray-700 hover:bg-gray-800
+               dark:bg-blue-700 dark:hover:bg-blue-800
+               focus:outline-none focus:ring-4">
+                Signup
+            </a>
+
+        </div>
+
+    </div>
+</nav>

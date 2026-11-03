@@ -1,0 +1,34 @@
+<div
+    data-th-if="${session.message}"
+    data-th-object="${session.message}"
+    data-th-fragment="messagebox"
+    data-th-classappend="
+        'border-' + *{type} + '-200 bg-' + *{type} + '-50 text-' + *{type} + '-700
+        dark:border-' + *{type} + '-900 dark:bg-' + *{type} + '-950/40
+        dark:text-' + *{type} + '-300'"
+    class="mb-5 flex items-start gap-3 rounded-xl border p-4 text-sm shadow-sm"
+    role="alert">
+
+    <!-- Status Icon -->
+    <span
+        class="flex h-6 w-6 shrink-0 items-center justify-center
+               rounded-full bg-current/10 text-base font-bold"
+        data-th-text="*{type == 'success' ? '✓' : (type == 'danger' || type == 'error' ? '!' : 'i')}">
+    </span>
+
+    <!-- Message Content -->
+    <div class="min-w-0 flex-1">
+        <p
+            class="font-semibold"
+            data-th-text="*{type == 'success' ? 'Success' : (type == 'danger' || type == 'error' ? 'Error' : 'Notification')}">
+        </p>
+
+        <p
+            class="mt-1 leading-5"
+            data-th-text="*{content}">
+        </p>
+    </div>
+
+    <!-- Existing message cleanup logic -->
+    <th:block th:text="${@sessionHelper.removeMessage()}"></th:block>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- class dark is used for dark theme -->
+<html 
+    lang="en"
+    th:fragment="parent(content, title, script)" 
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-replace="${title}">SCM</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-slate-950 dark:text-white">
+    <!-- common header -->
+
+    <!-- user is loggedin -->
+     <div th:if="${loggedInUser}">
+         <div data-th-replace="~{user/user_navbar :: user-navbar}"></div>
+     </div>
+     
+    <!-- user is not loggedin -->
+     <div th:unless="${loggedInUser}"> 
+         <div data-th-replace="~{navbar :: navbar}"></div>
+     </div>
+    <!-- main content -->
+     <div class="p-4 pt-20">
+        <section data-th-replace="${content}"></section>
+     </div>
+     <!-- <footer class="p-4">Footer: Let's do this</footer> -->
+    <!-- flow bite content -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script data-th-src="@{'/js/script.js'}"></script>
+    <th:block data-th-replace="${script}"></th:block>
+</body>
+</html>
